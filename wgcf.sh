@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-
+# File name: wgcf.sh
+# Description: Install latest version wgcf
+# System Required: GNU/Linux
+# Version: 1.2
+#
 
 set -o errexit
 set -o errtrace
