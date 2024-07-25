@@ -3,6 +3,7 @@
 # System Required: Debian, Ubuntu, Fedora, CentOS, Oracle Linux, Arch Linux
 # Version: 1.0.40_Final
 
+
 FontColor_Red="\033[31m"
 FontColor_Red_Bold="\033[1;31m"
 FontColor_Green="\033[32m"
@@ -114,7 +115,7 @@ System Information
 
 
 Install_wgcf() {
-    curl -fsSL git.io/wgcf.sh | bash
+    curl -fsSL https://raw.githubusercontent.com/yirenchengfeng1/warp/main/wgcf.sh | bash
 }
 
 Uninstall_wgcf() {
@@ -235,11 +236,11 @@ Install_WireGuardTools() {
 Install_WireGuardGo() {
     case ${SysInfo_Virt} in
     openvz | lxc*)
-        curl -fsSL git.io/wireguard-go.sh | bash
+        curl -fsSL https://raw.githubusercontent.com/yirenchengfeng1/warp/main/wireguard-go.sh | bash
         ;;
     *)
         if [[ ${SysInfo_Kernel_Ver_major} -lt 5 || ${SysInfo_Kernel_Ver_minor} -lt 6 ]]; then
-            curl -fsSL git.io/wireguard-go.sh | bash
+            curl -fsSL https://raw.githubusercontent.com/yirenchengfeng1/warp/main/wireguard-go.sh | bash
         fi
         ;;
     esac
@@ -777,7 +778,7 @@ Print_Usage() {
     echo -e "
 
 USAGE:
-    bash <(curl -fsSL git.io/warp.sh) [SUBCOMMAND]
+    bash <(curl -fsSL https://raw.githubusercontent.com/yirenchengfeng1/warp/main/warp.sh) [SUBCOMMAND]
 
 SUBCOMMANDS:
     wg4             Configuration WARP IPv4 Global Network (with WireGuard), all IPv4 outbound data over the WARP network
