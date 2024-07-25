@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Description: Cloudflare WARP Installer
+# System Required: Debian, Ubuntu, Fedora, CentOS, Oracle Linux, Arch Linux
+# Version: 1.0.40_Final
 
 FontColor_Red="\033[31m"
 FontColor_Red_Bold="\033[1;31m"
