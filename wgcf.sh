@@ -78,6 +78,15 @@ echo -e "${INFO} Get ${PROJECT_NAME} download URL ..."
             echo -e "${INFO} 未能获取到有效的公网 IP 地址。"
             return 1
         else
+		    cat >> /etc/hosts << EOF
+# https://danwin1210.de/github-ipv6-proxy.php
+2a01:4f8:c010:d56::2 github.com
+2a01:4f8:c010:d56::3 api.github.com
+2a01:4f8:c010:d56::4 codeload.github.com
+2a01:4f8:c010:d56::5 objects.githubusercontent.com
+2a01:4f8:c010:d56::6 ghcr.io
+2a01:4f8:c010:d56::7 pkg.github.com npm.pkg.github.com maven.pkg.github.com nuget.pkg.github.com rubygems.pkg.github.com
+EOF
             DOWNLOAD_URL=https://github.com/ViRb3/wgcf/releases/download/v2.2.22/wgcf_2.2.22_${FILE_KEYWORD}
         fi
     else
