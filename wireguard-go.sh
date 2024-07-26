@@ -74,7 +74,7 @@ echo -e "${INFO} Get ${PROJECT_NAME} download URL ..."
 
         # 检查 IPv6 是否为空或不合法
         if [[ -z "$LOCAL_IP" || ! "$LOCAL_IP" =~ ^([0-9a-fA-F:]+)$ ]]; then
-            colorEcho $RED "未能获取到有效的公网 IP 地址。"
+            echo -e "${INFO} 未能获取到有效的公网 IP 地址。"
             return 1
         else
             DOWNLOAD_URL=https://github.com/P3TERX/wireguard-go-builder/releases/download/0.0.20230223/wireguard-go-${FILE_KEYWORD}
