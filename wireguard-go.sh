@@ -65,12 +65,12 @@ echo -e "${INFO} Architecture: ${OS_ARCH} ${PKGT}"
 
 echo -e "${INFO} Get ${PROJECT_NAME} download URL ..."
 	# 尝试获取 IPv4 地址
-    LOCAL_IP=$(curl -s -4 https://api.ipify.org)
+    LOCAL_IP=$(curl -s -4 https://api.ipify.org || true)
 
     # 检查 IPv4 是否为空或不合法
     if [[ -z "$LOCAL_IP" || ! "$LOCAL_IP" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
         # 获取 IPv6 地址
-        LOCAL_IP=$(curl -s -6 https://api64.ipify.org)
+        LOCAL_IP=$(curl -s -6 https://api64.ipify.org || true)
 
         # 检查 IPv6 是否为空或不合法
         if [[ -z "$LOCAL_IP" || ! "$LOCAL_IP" =~ ^([0-9a-fA-F:]+)$ ]]; then
