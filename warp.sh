@@ -113,6 +113,10 @@ System Information
 "
 }
 
+Print_Delimiter() {
+    printf '=%.0s' $(seq $(tput cols))
+    echo
+}
 
 Install_wgcf() {
     curl -fsSL https://raw.githubusercontent.com/yirenchengfeng1/warp/main/wgcf.sh | bash
