@@ -112,13 +112,13 @@ if [[ ! $(echo ${PATH} | grep ${BIN_DIR}) ]]; then
     ln -sf ${BIN_FILE} /usr/bin/${BIN_NAME}
 fi
 #删除条目
-remove_entries() {
+
   for entry in "${entries[@]}"; do
     # 使用 sed 删除包含 entry 的行
     sed -i "/$entry/d" /etc/hosts
     echo "Removed: $entry"
   done
-}
+
 if [[ -s ${BIN_FILE} && $(${BIN_NAME} -h) ]]; then
     echo -e "${INFO} Done."
 else
